@@ -34,11 +34,11 @@ This is a simple Flask-based API that greets visitors and provides weather infor
 ### Setup and Installation
 1. Clone the repository:
 git clone https://github.com/sethdanny/HelloVisitorAPI.git
-cd HelloVisitorApi
+* cd HelloVisitorApi
 
 2. Create and activate a virtual environment:
 python -m venv venv
-source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+`source venv/bin/activate`  # On Windows, use `venv\Scripts\activate`
 
 3. Install the required dependencies:
 pip install -r requirements.txt
