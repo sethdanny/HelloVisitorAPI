@@ -15,6 +15,15 @@ app = Flask(__name__)
 IP_INFO_TOKEN = getenv('IP_INFO_TOKEN')
 OPENWEATHERMAP_API_KEY = getenv('OPENWEATHERMAP_API_KEY')
 
+@app.route('/', methods=['GET'], strict_slashes=False)
+def welcome():
+    """
+    Default route to welcome users to the Flask application.
+
+    Returns:
+    - JSON response with a welcome message.
+    """
+    return jsonify({"message": "Welcome to the Flask application! Use the /api/hello endpoint to get a personalized greeting and weather information."})
 
 @app.route('/api/hello', methods=['GET'], strict_slashes=False)
 def index():
