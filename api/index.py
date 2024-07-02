@@ -49,8 +49,7 @@ def index():
         }
     """
     visitor_name = request.args.get('visitor_name', 'Mark')
-    client_ip_response = requests.get('https://api.ipify.org?format=json')
-    client_ip = client_ip_response.json().get('ip')
+    client_ip = request.remote_addr
     
     ipinfo_url = f'http://ip-api.com/json/{client_ip}'
 
