@@ -54,9 +54,13 @@ def index():
     
     ipinfo_url = f'http://ip-api.com/json/{client_ip}'
 
+
     location_response = requests.get(ipinfo_url)
-    location_data = location_response.json()
-    location = location_data.get('city')
+    if location_response.status_code == 200:
+        location_data = location_response.json()
+        location = location_data.get('city')
+    else:
+        print(f"Error fetching data. Status code: {location_response.status_code}")
 
     weather_url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid={}'.format(
         location, OPENWEATHERMAP_API_KEY)
