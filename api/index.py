@@ -12,7 +12,7 @@ load_dotenv()
 
 app = Flask(__name__)
 
-IP_INFO_TOKEN = getenv('IP_INFO_TOKEN')
+
 OPENWEATHERMAP_API_KEY = getenv('OPENWEATHERMAP_API_KEY')
 
 @app.route('/', methods=['GET'], strict_slashes=False)
